@@ -73,7 +73,7 @@
             <Button fx:id="sub_loginBtn" layoutX="82.0" layoutY="360.0" mnemonicParsing="false" onAction="#loginSlider" prefHeight="29.0" prefWidth="138.0" text="Sign In" visible="false" />
             <AnchorPane prefHeight="35.0" prefWidth="600.0">
                <children>
-                  <Button fx:id="close" layoutX="554.0" layoutY="1.0" mnemonicParsing="false" onAction="#close" text="Close" AnchorPane.rightAnchor="0.8571428571428896" AnchorPane.topAnchor="1.0" />
+                  <Button fx:id="close_icon" layoutX="554.0" layoutY="1.0" mnemonicParsing="false" onAction="#close" text="Close" AnchorPane.rightAnchor="0.8571428571428896" AnchorPane.topAnchor="1.0" />
                </children>
             </AnchorPane>
          </children>

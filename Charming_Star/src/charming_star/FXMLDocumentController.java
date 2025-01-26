@@ -30,6 +30,9 @@ public abstract class FXMLDocumentController implements Initializable {
     
      @FXML
     private Button close;
+     
+    @FXML
+    private Button close_icon;
 
     @FXML
     private Label edit_label;

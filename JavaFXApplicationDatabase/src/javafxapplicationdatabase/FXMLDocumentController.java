@@ -25,7 +25,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
  */
 public class FXMLDocumentController implements Initializable {
     
-    private Label label;
+
     @FXML
     private TableView<student> tvStudent;
     @FXML
@@ -57,13 +57,20 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
+       
+        
+        if(event.getSource()==btnInsert){
+            insert();
+            
+        }
+        else if (event.getSource()==btnDelete){
+            delete();
+        }
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        showStudents();
         
         
     } 
@@ -111,11 +118,36 @@ public Connection getConnection(){
             ObservableList <student> list = getstudent();
             colId.setCellValueFactory(new PropertyValueFactory<student,Integer>("ID"));
             colName.setCellValueFactory(new PropertyValueFactory<student,String>("Name"));
-            colDept.setCellValueFactory(new PropertyValueFactory<student,String>("Department"));
+            colDept.setCellValueFactory(new PropertyValueFactory<student,String>("Dept"));
             colAge.setCellValueFactory(new PropertyValueFactory<student,String>("Age"));
             colEmail.setCellValueFactory(new PropertyValueFactory<student,String>("Email"));
             tvStudent.setItems(list);
             
         }  
+        void executeQuery(String query){
+            Connection conn = getConnection();
+            Statement st;
+            try{
+                st = conn.createStatement();
+                st.executeUpdate(query);
+            }catch (Exception e){
+                System.out.println(e.getMessage());
+            }
+        }
+        
+        void insert(){
+            String query = "INSERT INTO student VALUES("+tfId.getText()+",'"+tfName.getText()+"','"+tfDept.getText()+"','"+tfAge.getText()+"','"+tfEmail.getText()+"')";
+            executeQuery(query);
+            showStudents();
+        }
+        void delete(){
+        String query = "DELETE from students where id="+tfId.getText()+"";
+        executeQuery(query);
+        showStudents();
+        }
+        
+        void update(){
+        String query = "UPDATE student SET id="+tfId.getText()+","+tfName.getText()+","+tfDept.getText()+","+tfAge.getText()+","+tfEmail.getText()+" WHERE id="+tfId.getText()+"";
+        }
 }
    
