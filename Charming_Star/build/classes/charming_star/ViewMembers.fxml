@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="charming_star.ViewMembersController">
+    <Label text="Gym Members" layoutX="200" layoutY="20" style="-fx-font-size: 20px;" />
+    
+    <TableView fx:id="membersTable" layoutX="50" layoutY="60" prefWidth="500" prefHeight="300">
+        <columns>
+            <TableColumn text="ID" fx:id="idColumn" prefWidth="50" />
+            <TableColumn text="Name" fx:id="nameColumn" prefWidth="150" />
+            <TableColumn text="Age" fx:id="ageColumn" prefWidth="100" />
+            <TableColumn text="Membership Type" fx:id="membershipTypeColumn" prefWidth="150" />
+            <TableColumn text="Join Date" fx:id="joinDateColumn" prefWidth="150" />
+        </columns>
+    </TableView>
+
+    <Button text="Update" layoutX="150" layoutY="380" onAction="#handleUpdate" />
+    <Button text="Delete" layoutX="250" layoutY="380" onAction="#handleDelete" />
+    <Button text="Back" layoutX="350" layoutY="380" onAction="#goBack" />
+</AnchorPane>
