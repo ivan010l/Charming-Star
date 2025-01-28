@@ -40,19 +40,19 @@ public class ViewMembersController {
 
     @FXML
     public void initialize() {
-        // Set up table columns
+        
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         ageColumn.setCellValueFactory(new PropertyValueFactory<>("age"));
         membershipTypeColumn.setCellValueFactory(new PropertyValueFactory<>("membershipType"));
         joinDateColumn.setCellValueFactory(new PropertyValueFactory<>("joinDate"));
 
-        // Load data into the table
+        
         loadMembers();
     }
 
     private void loadMembers() {
-        membersList.clear(); // Clear previous data
+        membersList.clear(); 
         try (Connection connection = DatabaseHandler.getConnection();
              PreparedStatement statement = connection.prepareStatement("SELECT * FROM members")) {
 
@@ -70,7 +70,7 @@ public class ViewMembersController {
 
             membersTable.setItems(membersList);
         } catch (SQLException e) {
-            e.printStackTrace(); // Log the error
+            e.printStackTrace(); 
         }
     }
 
@@ -82,19 +82,18 @@ public class ViewMembersController {
             return;
         }
 
-        // Open a dialog or new window to edit the selected member
-        // For simplicity, let's update the membership type directly in this example:
+     
         try (Connection connection = DatabaseHandler.getConnection();
              PreparedStatement statement = connection.prepareStatement(
                      "UPDATE members SET membership_type = ? WHERE id = ?")) {
 
-            // Example: Update membership type to "Updated Type"
+           
             statement.setString(1, "Updated Type");
             statement.setInt(2, selectedMember.getId());
             statement.executeUpdate();
 
             showAlert("Success", "Member updated successfully!");
-            loadMembers(); // Refresh the table
+            loadMembers(); 
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -108,7 +107,7 @@ public class ViewMembersController {
             return;
         }
 
-        // Confirm deletion
+        
         Alert confirmation = new Alert(Alert.AlertType.CONFIRMATION);
         confirmation.setTitle("Confirm Deletion");
         confirmation.setHeaderText("Are you sure you want to delete this member?");
@@ -124,7 +123,7 @@ public class ViewMembersController {
                 statement.executeUpdate();
 
                 showAlert("Success", "Member deleted successfully!");
-                loadMembers(); // Refresh the table
+                loadMembers(); 
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -133,7 +132,7 @@ public class ViewMembersController {
 
     @FXML
     public void goBack() {
-        // Close the current window
+        
         Stage stage = (Stage) membersTable.getScene().getWindow();
         stage.close();
     }

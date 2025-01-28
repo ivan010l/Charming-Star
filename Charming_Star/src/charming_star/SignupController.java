@@ -49,7 +49,7 @@ public class SignupController {
 
             if (rowsAffected > 0) {
                 showAlert(AlertType.INFORMATION, "Signup successful!");
-                // Redirect to login screen if needed
+                
             } else {
                 showAlert(AlertType.ERROR, "Signup failed.");
             }
@@ -61,12 +61,12 @@ public class SignupController {
     }
 
     public void goToLogin() {
-                // Load the Signup FXML and switch to the signup screen
+                
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
             Scene signupScene = new Scene(loader.load());
             
-            // Get current stage and switch to the signup screen
+            
             Stage currentStage = (Stage) usernameField.getScene().getWindow();
             currentStage.setScene(signupScene);
             currentStage.show();

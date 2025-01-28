@@ -12,10 +12,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-/**
- *
- * @author Surface Laptop 3
- */
+
 public class Charming_Star extends Application {
 
     private double x = 0;
@@ -31,9 +28,6 @@ public class Charming_Star extends Application {
         stage.show();
     }
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         launch(args);
     }

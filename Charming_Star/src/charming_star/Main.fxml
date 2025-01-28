@@ -10,29 +10,40 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="434.0" prefWidth="578.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="charming_star.MainController">
-    <Label layoutX="170.0" layoutY="54.0" style="-fx-font-size: 20px;" text="Gym Management System">
+<AnchorPane prefHeight="450.0" prefWidth="634.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="charming_star.MainController">
+    <Label layoutX="171.0" layoutY="43.0" prefHeight="32.0" prefWidth="241.0" style="-fx-font-size: 20px;" textFill="#02011d">
       <font>
-         <Font name="System Bold" size="12.0" />
+         <Font name="Tahoma Bold" size="14.0" />
       </font></Label>
     
-    <Label layoutX="50.0" layoutY="182.0" text="Name:" />
-    <TextField fx:id="nameField" layoutX="120.0" layoutY="177.0" />
+    <Label layoutX="127.0" layoutY="185.0" text="Name:" />
+    <TextField fx:id="nameField" layoutX="197.0" layoutY="180.0" />
 
-    <Label layoutX="50.0" layoutY="222.0" text="Age:" />
-    <TextField fx:id="ageField" layoutX="120.0" layoutY="217.0" />
+    <Label layoutX="127.0" layoutY="225.0" text="Age:" />
+    <TextField fx:id="ageField" layoutX="197.0" layoutY="220.0" />
 
-    <Label layoutX="50.0" layoutY="262.0" text="Membership Type:" />
-    <ComboBox fx:id="membershipTypeBox" layoutX="170.0" layoutY="257.0" prefWidth="150" />
+    <Label layoutX="127.0" layoutY="265.0" text="Membership Type:" />
+    <ComboBox fx:id="membershipTypeBox" layoutX="247.0" layoutY="260.0" prefWidth="150" />
 
-    <Label layoutX="50.0" layoutY="302.0" text="Join Date:" />
-    <DatePicker fx:id="joinDatePicker" layoutX="120.0" layoutY="297.0" />
+    <Label layoutX="127.0" layoutY="305.0" text="Join Date:" />
+    <DatePicker fx:id="joinDatePicker" layoutX="197.0" layoutY="300.0" />
 
-    <Button fx:id="addButton" layoutX="50.0" layoutY="352.0" onAction="#addMember" text="Add Member" />
-    <Button fx:id="viewButton" layoutX="150.0" layoutY="352.0" onAction="#viewMembers" text="View Members" />
-   <ImageView fitHeight="104.0" fitWidth="95.0" layoutX="38.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+    <Button fx:id="addButton" layoutX="127.0" layoutY="355.0" onAction="#addMember" text="Add Member" textFill="#2b0879">
+      <font>
+         <Font name="Tahoma Bold" size="12.0" />
+      </font></Button>
+    <Button fx:id="viewButton" layoutX="227.0" layoutY="355.0" onAction="#viewMembers" text="View Members" textFill="#1e066f">
+      <font>
+         <Font name="Tahoma Bold" size="12.0" />
+      </font></Button>
+   <ImageView fitHeight="79.0" fitWidth="79.0" layoutX="122.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
       <image>
-         <Image url="@img/sign.png" />
+         <Image url="@img/46454227.png" />
       </image>
    </ImageView>
+   <Label layoutX="208.0" layoutY="45.0" text="Gym Management System" textFill="#7f0808">
+      <font>
+         <Font name="Tahoma Bold" size="24.0" />
+      </font>
+   </Label>
 </AnchorPane>

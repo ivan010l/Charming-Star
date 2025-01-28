@@ -30,7 +30,7 @@ public class MainController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        // Initialize ComboBox items
+        
         membershipTypeBox.getItems().addAll("Basic", "Premium", "VIP");
     }
 

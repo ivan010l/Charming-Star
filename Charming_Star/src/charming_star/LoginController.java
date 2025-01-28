@@ -32,7 +32,7 @@ public class LoginController {
         }
 
         try {
-            // Connect to the database
+            
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/gym_management", "root", "");
             String query = "SELECT * FROM users WHERE username = ? AND password = ?";
             PreparedStatement statement = connection.prepareStatement(query);
@@ -41,14 +41,14 @@ public class LoginController {
             ResultSet resultSet = statement.executeQuery();
 
             if (resultSet.next()) {
-                // Successful login: Show a success alert and go to the main screen
+                
                 showAlert(AlertType.INFORMATION, "Login successful!");
                 
-                // Load Main.fxml
+                
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("Main.fxml"));
                 Scene mainScene = new Scene(loader.load());
                 
-                // Get current stage and set the main screen
+                
                 Stage currentStage = (Stage) usernameField.getScene().getWindow();
                 currentStage.setScene(mainScene);
                 currentStage.show();
@@ -63,12 +63,12 @@ public class LoginController {
     }
 
     public void goToSignup() {
-        // Load the Signup FXML and switch to the signup screen
+        
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("signup.fxml"));
             Scene signupScene = new Scene(loader.load());
             
-            // Get current stage and switch to the signup screen
+            
             Stage currentStage = (Stage) usernameField.getScene().getWindow();
             currentStage.setScene(signupScene);
             currentStage.show();
